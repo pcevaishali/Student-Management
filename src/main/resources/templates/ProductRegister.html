@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Product Register Page</title>
+<!-- Bootstrap CSS Link -->
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	rel="stylesheet" />
+
+<style>
+/* Background image (TODO app photo) */
+body {
+	background-image:
+		url('https://via.placeholder.com/1500x1000?text=TODO+App+Photo');
+	/* Replace with your TODO app photo URL */
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	height: 100vh;
+}
+
+.container {
+	background-color: rgba(255, 255, 255, 0.8);
+	/* Semi-transparent background for the form */
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+	font-family: 'Arial', sans-serif;
+	font-weight: bold;
+	color: #333;
+}
+
+.form-group label {
+	font-weight: bold;
+}
+
+.btn-block {
+	background-color: #007bff;
+	color: white;
+	font-weight: bold;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.btn-block:hover {
+	background-color: #0056b3;
+}
+
+.navbar {
+	margin-bottom: 20px;
+}
+
+/* Add style for image display in the content */
+.task-image {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 0 auto 20px;
+}
+</style>
+</head>
+<body>
+
+	<!-- Navbar -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">Student Management</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNav" aria-controls="navbarNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item"><a class="nav-link" href="/product/all">View
+						Details</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="/product/register">Register Details</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- Main Content -->
+	<div class="container mt-5">
+		<h1 class="text-center mb-4">Student Management System</h1>
+
+		<!-- Displaying a Task Image -->
+		<img
+			src="https://th.bing.com/th/id/OIP.-8KDcaFyXvaTqZUrG1OqrAHaDQ?rs=1&pid=ImgDetMain"
+			alt="Task Image" class="task-image"
+			style="width: 300px; height: 200px;" />
+
+		<form th:action="@{/product/save}" method="post">
+			<div class="form-group">
+				<label for="name">Student Name:</label> <input type="text"
+					class="form-control" id="name" name="name" required>
+			</div>
+
+			<div class="form-group">
+				<label for="description">Branch</label> <input type="text"
+					class="form-control" id="description" name="description" required>
+			</div>
+
+			<div class="form-group">
+				<label for="price">Registeration</label> <input type="text"
+					class="form-control" id="price" name="price" required>
+			</div>
+
+			<div class="form-group">
+				<label for="vendor">Year</label> <select class="form-control"
+					id="vendor" name="vendor" required>
+					<option value="">-Select-</option>
+					<option value="Emp">I</option>
+					<option value="Dep">II</option>
+					<option value="Hr">III</option>
+				</select>
+			</div>
+
+			<button type="submit" class="btn btn-primary btn-block">ADD</button>
+		</form>
+	</div>
+
+	<!-- Add Bootstrap JS and Popper.js for enhanced functionality -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Student</title>
+    <!-- Bootstrap CSS Link -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        /* Custom styling for better form alignment */
+        body {
+            background-color: #f8f9fa;
+            padding-top: 50px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-family: 'Arial', sans-serif;
+            color: #343a40;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        button {
+            font-size: 1.1rem;
+        }
+
+        .btn-block {
+            font-size: 1.2rem;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Update Student</h1>
+
+        <!-- Thymeleaf form with product object binding -->
+        <form th:action="@{/product/update}" th:object="${product}" method="post">
+            <!-- Hidden field for product ID -->
+            <input type="hidden" th:field="*{id}" />
+
+            <!-- Product Name field -->
+            <div class="form-group">
+                <label for="name">Student Name:</label>
+                <input type="text" id="name" class="form-control" th:field="*{name}" placeholder="Enter Product Name" required />
+            </div>
+
+            <!-- Product Description field -->
+            <div class="form-group">
+                <label for="description">Branch</label>
+                <input type="text" id="description" class="form-control" th:field="*{description}" placeholder="Enter Task Description" required />
+            </div>
+
+            <!-- Product Price field -->
+            <div class="form-group">
+                <label for="price">Registeration</label>
+                <input type="number" id="price" class="form-control" th:field="*{price}" placeholder="Enter Product Value" required />
+            </div>
+
+            <!-- Product Vendor field -->
+            <div class="form-group">
+                <label for="vendor">Year</label>
+                <input type="text" id="vendor" class="form-control" th:field="*{vendor}" placeholder="Enter Vendor Type" required />
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary btn-block">Update StudentDetails</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js for enhanced functionality -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
